@@ -1,33 +1,30 @@
-
-let rounds = 5;
 let humanScore = 0;
 let computerScore = 0;
-
+const options = ["rock", "paper", "scissors"]
 
 //randomly generates computer choice
 function getComputerChoice () { 
-    options = ["rock", "paper", "scissors"]
+    
     computerChoice = options[Math.floor(Math.random()*options.length)]
-    console.log(computerChoice); 
+    console.log("Computer Choice: " + computerChoice); 
 }
 
-getComputerChoice();
+//getComputerChoice();
 
 //prompts user to enter their choice
 function getHumanChoice () {
     humanChoice = prompt("Enter your choice")
     humanChoice = humanChoice.toLowerCase();
-    console.log(humanChoice);
+    console.log("Human Choice: " + humanChoice);
 }
 
-getHumanChoice();
+//getHumanChoice();
 
 //rock paper scissors game
 
   
-function playGame() {
+
 function playRound (computerSelection, humanSelection) {
-    //console.log(computerScore++);
     if (computerSelection === humanSelection) {
             console.log("You Tied! Try Again!");
     } 
@@ -55,19 +52,35 @@ function playRound (computerSelection, humanSelection) {
         console.log("You win! Scissors beats paper.")
         humanScore = humanScore +1;
     }
+    console.log("Computer Score: " + computerScore);
+    console.log("Human Score: " + humanScore);
 }
 
-for (let i = 0; i < rounds; i++) {
-    const humanSelection = getHumanChoice;
-    const computerSelection = getComputerChoice;
-    playRound(computerChoice, humanChoice);
-    
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const computerSelection = getComputerChoice();
+        const humanSelection = getHumanChoice();
+        playRound(computerChoice, humanChoice); 
+    }
+    if (humanScore > computerScore) {
+        console.log("You won the game. Your Score: " + humanScore + " & Computer Score: " + computerScore)
+    }
+    else if (humanScore < computerScore) {
+        console.log("You lose the game. Your Score: " + humanScore + " & Computer Score: " + computerScore)
+    }
+    else {
+        console.log("You tied. Your Score ${humanScore} & Computer Score: ${computerScore}")
+    }
 }
 
 
-console.log("Computer Score: " + computerScore);
-console.log("Human Score: " + humanScore);
-}
+
+
+
+
+
+
+
 
 
 
