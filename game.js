@@ -3,13 +3,10 @@ let computerScore = 0;
 const options = ["rock", "paper", "scissors"]
 
 //randomly generates computer choice
-function getComputerChoice () { 
-    
+function getComputerChoice () {   
     computerChoice = options[Math.floor(Math.random()*options.length)]
     console.log("Computer Choice: " + computerChoice); 
 }
-
-//getComputerChoice();
 
 //prompts user to enter their choice
 function getHumanChoice () {
@@ -18,12 +15,7 @@ function getHumanChoice () {
     console.log("Human Choice: " + humanChoice);
 }
 
-//getHumanChoice();
-
-//rock paper scissors game
-
-  
-
+//rock paper scissors round
 function playRound (computerSelection, humanSelection) {
     if (computerSelection === humanSelection) {
             console.log("You Tied! Try Again!");
@@ -56,6 +48,7 @@ function playRound (computerSelection, humanSelection) {
     console.log("Human Score: " + humanScore);
 }
 
+//rock paper scissors full game played five times & gives result & scores
 function playGame() {
     for (let i = 0; i < 5; i++) {
         const computerSelection = getComputerChoice();
@@ -73,16 +66,4 @@ function playGame() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 playGame();
-//playGame();
